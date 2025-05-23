@@ -195,7 +195,7 @@ const AdminProducts = () => {
         formData.append('imageUrl', productImage);
       }
 
-      await productApi.updateProduct(currentProduct.id, formData);
+      await productApi.updateProduct(currentProduct._id, formData);
       
       toast({
         title: "Success",
@@ -288,7 +288,7 @@ const AdminProducts = () => {
               </TableRow>
             ) : (
               filteredProducts.map((product) => (
-                <TableRow key={product.id}>
+                <TableRow key={product._id}>
                   <TableCell>
                     <div className="flex items-center space-x-3">
                       <div className="w-12 h-12 bg-gray-100 rounded overflow-hidden">
