@@ -112,7 +112,7 @@ const HomePage = () => {
             <div className="text-center p-6">
               <div className="text-4xl mb-4 text-brand-blue">🚚</div>
               <h3 className="text-xl font-semibold mb-2">Free Shipping</h3>
-              <p className="text-gray-600">On all orders over $50</p>
+              <p className="text-gray-600">On all orders over ₹500</p>
             </div>
             <div className="text-center p-6">
               <div className="text-4xl mb-4 text-brand-blue">🔄</div>
