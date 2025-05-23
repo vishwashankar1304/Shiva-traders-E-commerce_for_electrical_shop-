@@ -215,16 +215,7 @@ const CheckoutPage = () => {
                 onValueChange={(value) => setPaymentMethod(value as PaymentMethod)}
                 className="space-y-4"
               >
-                <div className="flex items-center space-x-3 border rounded-md p-3 cursor-pointer hover:bg-gray-50">
-                  <RadioGroupItem value="razorpay" id="razorpay" />
-                  <Label htmlFor="razorpay" className="flex items-center cursor-pointer">
-                    <CreditCard className="mr-2 h-5 w-5 text-blue-500" />
-                    <div>
-                      <div className="font-medium">Pay Online (Razorpay)</div>
-                      <div className="text-sm text-gray-500">Credit/Debit Card, UPI, Netbanking</div>
-                    </div>
-                  </Label>
-                </div>
+             
                 
                 <div className="flex items-center space-x-3 border rounded-md p-3 cursor-pointer hover:bg-gray-50">
                   <RadioGroupItem value="cash_on_delivery" id="cod" />
