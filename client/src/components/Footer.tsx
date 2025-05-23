@@ -12,7 +12,7 @@ const Footer = () => {
               <span className="text-brand-orange">Traders</span>
             </h3>
             <p className="text-gray-600">
-              Quality Electronics at Affordable Prices
+              Quality Electricals at Affordable Prices
             </p>
           </div>
           
