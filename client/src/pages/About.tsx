@@ -9,7 +9,7 @@ const About = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-6">About Siva Traders</h1>
             <p className="text-xl text-blue-100">
-              Your trusted partner for quality electronics and home improvement products at affordable prices.
+              Your trusted partner for quality electricals and home improvement products at affordable prices.
             </p>
           </div>
         </div>

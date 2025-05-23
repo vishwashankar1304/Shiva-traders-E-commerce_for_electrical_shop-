@@ -47,11 +47,11 @@ const HomePage = () => {
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6 md:pr-12">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              Quality Electronics at{" "}
+              Quality Electricals at{" "}
               <span className="text-brand-yellow">Affordable Prices</span>
             </h1>
             <p className="text-lg md:text-xl opacity-90">
-              Discover our wide range of electronics and home improvement products with same-day delivery.
+              Discover our wide range of electricals and home improvement products with same-day delivery.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Button 
@@ -78,7 +78,7 @@ const HomePage = () => {
           <div className="hidden md:block">
             <img 
               src="https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80"
-              alt="Electronics Showcase"
+              alt="Electricals Showcase"
               className="rounded-lg shadow-lg"
             />
           </div>
