@@ -85,39 +85,7 @@ const HomePage = () => {
         </div>
       </section>
       
-      {/* Categories Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Shop by Category</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <Link to="/products?category=Laptops" className="group">
-              <div className="bg-gray-100 rounded-lg p-8 text-center transition-all duration-300 hover:bg-brand-blue/10 hover:shadow-md">
-                <div className="text-4xl mb-4 text-brand-blue">💻</div>
-                <h3 className="font-semibold group-hover:text-brand-blue">Laptops</h3>
-              </div>
-            </Link>
-            <Link to="/products?category=Smartphones" className="group">
-              <div className="bg-gray-100 rounded-lg p-8 text-center transition-all duration-300 hover:bg-brand-blue/10 hover:shadow-md">
-                <div className="text-4xl mb-4 text-brand-blue">📱</div>
-                <h3 className="font-semibold group-hover:text-brand-blue">Smartphones</h3>
-              </div>
-            </Link>
-            <Link to="/products?category=Audio" className="group">
-              <div className="bg-gray-100 rounded-lg p-8 text-center transition-all duration-300 hover:bg-brand-blue/10 hover:shadow-md">
-                <div className="text-4xl mb-4 text-brand-blue">🎧</div>
-                <h3 className="font-semibold group-hover:text-brand-blue">Audio</h3>
-              </div>
-            </Link>
-            <Link to="/products?category=TVs" className="group">
-              <div className="bg-gray-100 rounded-lg p-8 text-center transition-all duration-300 hover:bg-brand-blue/10 hover:shadow-md">
-                <div className="text-4xl mb-4 text-brand-blue">📺</div>
-                <h3 className="font-semibold group-hover:text-brand-blue">TVs</h3>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
-      
+     
       {/* Featured Products */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
