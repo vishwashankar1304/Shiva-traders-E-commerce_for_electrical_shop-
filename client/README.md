@@ -1,77 +1,50 @@
-<<<<<<< HEAD
-# Welcome to your Lovable project
+# Shiva Traders - Consultancy & Electronics Services
 
-## Project info
+Welcome to the official repository for **Shiva Traders**, a modern consultancy and electronics trading platform. This project aims to deliver a seamless shopping and consultation experience for electronics products, catering to both general customers and business clients.
 
-**URL**: https://lovable.dev/projects/357d5b67-c5c7-47d3-929f-ba154e557f15
+## 🛍️ Project Overview
 
-## How can I edit this code?
+Shiva Traders is an e-commerce and consultancy web application that provides:
+- A platform to browse and purchase electronics products.
+- Consultation services for custom electronics solutions.
+- Admin dashboard for managing inventory and orders.
+- Secure user authentication and role-based access.
 
-There are several ways of editing your application.
+## 🚀 Tech Stack
 
-**Use Lovable**
+**Frontend:**
+- React.js
+- Redux (optional)
+- Tailwind CSS / Bootstrap
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/357d5b67-c5c7-47d3-929f-ba154e557f15) and start prompting.
+**Backend:**
+- Node.js
+- Express.js
 
-Changes made via Lovable will be committed automatically to this repo.
+**Database:**
+- MongoDB (MongoDB Atlas)
 
-**Use your preferred IDE**
+**Other:**
+- JWT Authentication
+- Cloudinary / Multer for image uploads
+- RESTful APIs
+- Postman (for testing)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🔐 Features
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 👤 User
+- Sign up / Login
+- Browse electronics products
+- Add to cart and checkout
+- View order history
+- Request consultation
 
-Follow these steps:
+### 🛠️ Admin
+- Login with credentials
+- Add/edit/delete products
+- View and manage orders
+- Mark orders as shipped/delivered
+- Manage consultation requests
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 📂 Project Structure
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/357d5b67-c5c7-47d3-929f-ba154e557f15) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
-=======
-# admit-cart-control1
->>>>>>> b3da14f6fd78d453d2f45dd60dfa92857d8cff0b
