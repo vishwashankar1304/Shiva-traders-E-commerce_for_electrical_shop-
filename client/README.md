@@ -1,6 +1,6 @@
-# Shiva Traders - Consultancy & Electronics Services
+# Siva Traders - Consultancy & Electronics Services
 
-Welcome to the official repository for **Shiva Traders**, a modern consultancy and electronics trading platform. This project aims to deliver a seamless shopping and consultation experience for electronics products, catering to both general customers and business clients.
+Welcome to the official repository for **Siva Traders**, a modern consultancy and electronics trading platform. This project aims to deliver a seamless shopping and consultation experience for electronics products, catering to both general customers and business clients.
 
 ## 🛍️ Project Overview
 
