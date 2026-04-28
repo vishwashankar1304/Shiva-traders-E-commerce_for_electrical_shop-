@@ -39,9 +39,13 @@ const createProduct = async (req, res) => {
 // Other methods remain the same
 const getAllProducts = async (req, res) => {
   try {
-    const products = await productService.getAllProducts();
+    const searchQuery = req.query.search || "";
+    console.log("Search query received:", searchQuery);
+    const products = await productService.getAllProducts(searchQuery);
+    console.log("Returning", products.length, "products for search:", searchQuery);
     res.json(products);
   } catch (error) {
+    console.error("Error in getAllProducts:", error);
     res.status(500).json({ message: error.message });
   }
 };

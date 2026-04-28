@@ -6,8 +6,26 @@ const createProduct = async (data) => {
     return await product.save();
 }
 
-const getAllProducts = async () => {
-  return await Product.find({});
+const getAllProducts = async (searchQuery = "") => {
+  try {
+    if (searchQuery.trim()) {
+      console.log("Searching for products with query:", searchQuery);
+      // Search by name, description, or category (case-insensitive)
+      const results = await Product.find({
+        $or: [
+          { name: { $regex: searchQuery, $options: "i" } },
+          { description: { $regex: searchQuery, $options: "i" } },
+          { category: { $regex: searchQuery, $options: "i" } }
+        ]
+      });
+      console.log("Found", results.length, "products matching search");
+      return results;
+    }
+    console.log("No search query, returning all products");
+    return await Product.find({});
+  } catch (error) {
+    throw new Error(`Error fetching products: ${error.message}`);
+  }
 };
 
 const getProductById = async (id) => {

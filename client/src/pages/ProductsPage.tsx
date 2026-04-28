@@ -23,50 +23,54 @@ const ProductsPage = () => {
   const [sortBy, setSortBy] = useState("featured");
   const [filterOpen, setFilterOpen] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
   const { toast } = useToast();
 
-  // Function to load products
-  const loadProducts = useCallback(async () => {
-    try {
-      const fetchedProducts = await productApi.getAllProducts();
-      setProducts(fetchedProducts);
-      
-      // Extract categories
-      const uniqueCategories = Array.from(
-        new Set(fetchedProducts.map((product) => product.category))
-      );
-      setCategories(uniqueCategories);
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to load products",
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
-    }
-  }, [toast]);
+  // Load products when search query changes
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        const searchQuery = searchParams.get("search") || "";
+        console.log("Fetching products with search query:", searchQuery);
+        
+        const fetchedProducts = await productApi.getAllProducts(searchQuery);
+        console.log("Fetched products:", fetchedProducts);
+        
+        setProducts(fetchedProducts);
+        
+        // Extract categories from fetched products
+        const uniqueCategories = Array.from(
+          new Set(fetchedProducts.map((product) => product.category))
+        );
+        setCategories(uniqueCategories);
+      } catch (error) {
+        console.error("Error loading products:", error);
+        toast({
+          title: "Error",
+          description: "Failed to load products. Please check your connection.",
+          variant: "destructive",
+        });
+        setProducts([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, [searchParams, toast]);
+
+  // Sync searchTerm with URL search param
+  useEffect(() => {
+    setSearchTerm(searchParams.get("search") || "");
+  }, [searchParams]);
 
   useEffect(() => {
-    loadProducts();
-  }, [loadProducts]);
-
-  useEffect(() => {
-    // Apply filters and sorting
+    // Apply category filter and sorting (search is already handled by server)
     let filtered = [...products];
     
-    // Get current search and category from URL params
-    const currentSearch = searchParams.get("search") || "";
+    // Get current category from URL params
     const currentCategory = searchParams.get("category") || "all";
-    
-    // Apply search filter
-    if (currentSearch) {
-      filtered = filtered.filter(
-        (product) =>
-          product.name.toLowerCase().includes(currentSearch.toLowerCase()) ||
-          product.description.toLowerCase().includes(currentSearch.toLowerCase())
-      );
-    }
     
     // Apply category filter
     if (currentCategory && currentCategory !== "all") {
@@ -100,9 +104,8 @@ const ProductsPage = () => {
     e.preventDefault();
     // Update URL params with current search term
     const params = new URLSearchParams(searchParams);
-    const searchValue = (e.target as HTMLFormElement).querySelector('input[type="search"]')?.value || "";
-    if (searchValue.trim()) {
-      params.set("search", searchValue.trim());
+    if (searchTerm.trim()) {
+      params.set("search", searchTerm.trim());
     } else {
       params.delete("search");
     }
@@ -157,7 +160,7 @@ const ProductsPage = () => {
                 <Input
                   type="search"
                   placeholder="Search products by name, description..."
-                  value={searchParams.get("search") || ""}
+                  value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="pl-10 py-3 text-base border-2 border-gray-200 hover:border-brand-blue focus:border-brand-blue transition-colors rounded-lg"
                 />

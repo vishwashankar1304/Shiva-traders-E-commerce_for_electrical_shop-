@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://consultancy-server-git-main-vishwa-ss-projects-06cd2bff.vercel.app/api';
+// Use local backend in development, production URL in production
+const API_BASE_URL = import.meta.env.MODE === 'production' 
+  ? 'https://consultancy-server-git-main-vishwa-ss-projects-06cd2bff.vercel.app/api'
+  : 'http://localhost:5006/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -11,8 +14,9 @@ const api = axios.create({
 
 // Product API calls
 export const productApi = {
-  getAllProducts: async () => {
-    const response = await api.get('/products');
+  getAllProducts: async (search?: string) => {
+    const config = search ? { params: { search } } : {};
+    const response = await api.get('/products', config);
     return response.data;
   },
 
